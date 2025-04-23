@@ -1,8 +1,7 @@
 package com.infrastructuretool.faultreporting.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,8 +9,11 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Entity
 @Table(name = "fault_reports")
+@Builder
 public class FaultReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,20 +38,5 @@ public class FaultReport {
     @ManyToOne
     private User reportedBy;
 
-    private LocalDateTime createdAt = LocalDateTime.now();
-    private LocalDateTime updatedAt = LocalDateTime.now();
-
-    @OneToMany(mappedBy = "faultReport", cascade = CascadeType.ALL)
-    private List<Comment> comments = new ArrayList<>();
-
-    @OneToMany(mappedBy = "faultReport", cascade = CascadeType.ALL)
-    private List<Attachment> attachments = new ArrayList<>();
-
-    @OneToMany(mappedBy = "faultReport", cascade = CascadeType.ALL)
-    private List<AuditLog> auditLogs = new ArrayList<>();
-
-    @PreUpdate
-    public void setLastUpdate() {
-        this.updatedAt = LocalDateTime.now();
-    }
+    private LocalDateTime reportedAt;
 }

@@ -1,2 +1,13 @@
-package com.infrastructuretool.faultreporting.service;public interface AuditLogService {
+package com.infrastructuretool.faultreporting.service;
+
+import com.infrastructuretool.faultreporting.model.AuditLog;
+
+import java.util.List;
+
+public interface AuditLogService {
+    List<AuditLog> getAllAuditLogs();
+    AuditLog getAuditLogById(Long id);
+    AuditLog saveAuditLog(AuditLog auditLog);
+    AuditLog updateAuditLog(Long id, AuditLog auditLog);
+    void deleteById(Long id);
 }
