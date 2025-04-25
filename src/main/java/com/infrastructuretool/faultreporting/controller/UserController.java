@@ -3,10 +3,9 @@ package com.infrastructuretool.faultreporting.controller;
 import com.infrastructuretool.faultreporting.model.User;
 import com.infrastructuretool.faultreporting.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:3000")
@@ -22,5 +21,25 @@ public class UserController {
     @PostMapping("/user")
     public User save(@RequestBody User user){
         return userService.saveUser(user);
+    }
+
+    @GetMapping("/users")
+    public List<User> getUserList(){
+        return userService.getAllUsers();
+    }
+
+    @GetMapping("/user/{username}")
+    public User findByUsername(@PathVariable ("username") String username){
+        return userService.getUserByUsername(username);
+    }
+
+    @PutMapping("/update/user/{username}")
+    public User updateUser(@PathVariable ("username") String username, @RequestBody User user){
+        return userService.updateUser(username, user);
+    }
+
+    @DeleteMapping("/delete/user/{username}")
+    public void removeByUsername (@PathVariable ("username") String username){
+        userService.removeByUsername(username);
     }
 }
