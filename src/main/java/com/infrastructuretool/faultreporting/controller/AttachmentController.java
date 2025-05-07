@@ -25,7 +25,7 @@ public class AttachmentController {
     }
 
     @GetMapping("/attachments")
-    public List<Attachment> getAttachmentList(){
+    public List<Attachment> attachmentList(){
         return attachmentService.getAllAttachments();
     }
 

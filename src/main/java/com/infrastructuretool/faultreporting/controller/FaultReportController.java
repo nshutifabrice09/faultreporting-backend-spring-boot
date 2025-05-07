@@ -24,7 +24,7 @@ public class FaultReportController {
     }
 
     @GetMapping("/faultReports")
-    public List<FaultReport> getFaultReportList(){
+    public List<FaultReport> faultReportList(){
         return faultReportService.getAllFaultReports();
     }
 
