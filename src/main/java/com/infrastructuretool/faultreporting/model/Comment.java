@@ -26,4 +26,44 @@ public class Comment {
 
     @ManyToOne
     private FaultReport faultReport;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public FaultReport getFaultReport() {
+        return faultReport;
+    }
+
+    public void setFaultReport(FaultReport faultReport) {
+        this.faultReport = faultReport;
+    }
 }
