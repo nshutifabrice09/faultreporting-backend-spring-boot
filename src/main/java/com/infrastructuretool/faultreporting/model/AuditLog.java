@@ -19,9 +19,48 @@ public class AuditLog {
 
     private String action;
     private String performedBy;
-
     private LocalDateTime timestamp = LocalDateTime.now();
 
     @ManyToOne
     private FaultReport faultReport;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getAction() {
+        return action;
+    }
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    public String getPerformedBy() {
+        return performedBy;
+    }
+
+    public void setPerformedBy(String performedBy) {
+        this.performedBy = performedBy;
+    }
+
+    public LocalDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public FaultReport getFaultReport() {
+        return faultReport;
+    }
+
+    public void setFaultReport(FaultReport faultReport) {
+        this.faultReport = faultReport;
+    }
 }
