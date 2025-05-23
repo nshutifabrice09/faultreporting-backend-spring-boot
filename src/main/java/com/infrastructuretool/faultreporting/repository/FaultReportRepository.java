@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface FaultReportRepository extends JpaRepository <FaultReport, Long> {
+    FaultReport findFaultReportById(Long faultReportId);
 }

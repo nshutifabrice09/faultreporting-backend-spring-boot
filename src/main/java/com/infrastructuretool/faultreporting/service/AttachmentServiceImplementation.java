@@ -1,6 +1,7 @@
 package com.infrastructuretool.faultreporting.service;
 
 import com.infrastructuretool.faultreporting.model.Attachment;
+import com.infrastructuretool.faultreporting.model.FaultReport;
 import com.infrastructuretool.faultreporting.repository.AttachmentRepository;
 import com.infrastructuretool.faultreporting.repository.FaultReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +28,9 @@ public class AttachmentServiceImplementation implements AttachmentService{
 
     @Override
     public Attachment saveAttachment(Attachment attachment, Long faultReportId) {
-        return null;
+        FaultReport faultReport = faultReportRepository.findFaultReportById(faultReportId);
+        attachment.setFaultReport(faultReport);
+        return attachmentRepository.save(attachment);
     }
 
 
