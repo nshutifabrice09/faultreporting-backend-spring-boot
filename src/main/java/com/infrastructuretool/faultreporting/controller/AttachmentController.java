@@ -19,4 +19,9 @@ public class AttachmentController {
         this.attachmentService = attachmentService;
     }
 
+    @PostMapping("/attachment/{faultReportId}")
+    public Attachment save(@RequestBody Attachment attachment, @PathVariable ("faultReportId") Long faultReportId){
+        return attachmentService.saveAttachment(attachment, faultReportId);
+    }
+
 }
