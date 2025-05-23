@@ -19,7 +19,7 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
@@ -39,6 +39,6 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public void removeByUsername(String username) {
-
+        userRepository.deleteByUsername(username);
     }
 }
