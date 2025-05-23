@@ -19,10 +19,10 @@ public class AttachmentServiceImplementation implements AttachmentService{
         this.attachmentRepository = attachmentRepository;
         this.faultReportRepository = faultReportRepository;
     }
-    
+
     @Override
     public List<Attachment> getAllAttachments() {
-        return null;
+        return attachmentRepository.findAll();
     }
 
     @Override
@@ -33,7 +33,7 @@ public class AttachmentServiceImplementation implements AttachmentService{
 
     @Override
     public Attachment getAttachmentById(Long id) {
-        return null;
+        return attachmentRepository.findAttachmentById(id);
     }
 
     @Override
@@ -43,6 +43,6 @@ public class AttachmentServiceImplementation implements AttachmentService{
 
     @Override
     public void deleteById(Long id) {
-
+        attachmentRepository.deleteById(id);
     }
 }
