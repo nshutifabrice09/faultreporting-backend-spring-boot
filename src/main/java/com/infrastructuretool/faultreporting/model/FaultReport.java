@@ -33,6 +33,7 @@ public class FaultReport {
     private FaultStatus status = FaultStatus.PENDING;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User reportedBy;
 
     private LocalDateTime reportedAt;

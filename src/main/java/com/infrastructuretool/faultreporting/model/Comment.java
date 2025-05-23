@@ -22,9 +22,11 @@ public class Comment {
     private LocalDateTime timestamp = LocalDateTime.now();
 
     @ManyToOne
+    @JoinColumn(name = "author_id")
     private User author;
 
     @ManyToOne
+    @JoinColumn(name = "fault_report_id")
     private FaultReport faultReport;
 
     public Long getId() {

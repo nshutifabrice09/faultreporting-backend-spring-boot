@@ -22,6 +22,7 @@ public class AuditLog {
     private LocalDateTime timestamp = LocalDateTime.now();
 
     @ManyToOne
+    @JoinColumn(name = "fault_report_id")
     private FaultReport faultReport;
 
     public Long getId() {

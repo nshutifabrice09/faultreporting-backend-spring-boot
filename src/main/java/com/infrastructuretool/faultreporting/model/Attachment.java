@@ -21,6 +21,7 @@ public class Attachment {
     private String fileType;
 
     @ManyToOne
+    @JoinColumn(name = "fault_report_id")
     private FaultReport faultReport;
 
     public Long getId() {
