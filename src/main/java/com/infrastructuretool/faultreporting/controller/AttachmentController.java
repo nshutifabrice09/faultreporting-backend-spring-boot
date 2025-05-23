@@ -32,5 +32,14 @@ public class AttachmentController {
     public Attachment getAttachment(@PathVariable("id") Long id){
         return attachmentService.getAttachmentById(id);
     }
-    
+
+    @PutMapping("/update/attachment/{id}")
+    public Attachment updateAttachment(@PathVariable("id") Long id, @RequestBody Attachment attachment){
+        return attachmentService.updateAttachment(id, attachment);
+    }
+
+    @PutMapping("/delete/attachment/{id}")
+    public void removeAttachment(@PathVariable ("id") Long id){
+        attachmentService.deleteById(id);
+    }
 }

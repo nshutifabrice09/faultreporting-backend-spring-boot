@@ -18,29 +18,6 @@ public class AuditLogController {
         this.auditLogService = auditLogService;
     }
 
-    @PostMapping("/auditLog")
-    public AuditLog save(@RequestBody AuditLog auditLog){
-        return auditLogService.saveAuditLog(auditLog);
-    }
-
-    @GetMapping("/auditLogs")
-    public List<AuditLog> auditLogList(){
-        return auditLogService.getAllAuditLogs();
-    }
-
-    @GetMapping("/auditLog/{id}")
-    public AuditLog findById(@PathVariable ("id") Long id){
-        return auditLogService.getAuditLogById(id);
-    }
-
-    @PutMapping("/update/auditLog/{id}")
-    public AuditLog updateAuditLog (@PathVariable ("id") Long id, @RequestBody AuditLog auditLog){
-        return auditLogService.updateAuditLog(id, auditLog);
-    }
-
-    @DeleteMapping("/delete/auditLog/{id}")
-    public void deleteById(@PathVariable ("id") Long id){
-        auditLogService.deleteById(id);
-    }
+    
 
 }
