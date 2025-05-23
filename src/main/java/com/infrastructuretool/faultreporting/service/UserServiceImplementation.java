@@ -34,6 +34,16 @@ public class UserServiceImplementation implements UserService{
 
     @Override
     public User updateUser(String username, User user) {
+        User existUser = userRepository.getUserByUsername(username);
+        if(existUser != null){
+            existUser.setFirstName(user.getFirstName());
+            existUser.setLastName(user.getFirstName());
+            existUser.setUsername(user.getUsername());
+            existUser.setEmail(user.getEmail());
+            existUser.setPassword(user.getPassword());
+            existUser.setPhoneNumber(user.getPhoneNumber());
+            return userRepository.save(existUser);
+        }
         return null;
     }
 
