@@ -28,4 +28,9 @@ public class AttachmentController {
     public List<Attachment> attachmentList(){
         return attachmentService.getAllAttachments();
     }
+    @GetMapping("/attachment/{id}")
+    public Attachment getAttachment(@PathVariable("id") Long id){
+        return attachmentService.getAttachmentById(id);
+    }
+    
 }
