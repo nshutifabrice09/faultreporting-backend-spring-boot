@@ -41,6 +41,12 @@ public class AttachmentServiceImplementation implements AttachmentService{
 
     @Override
     public Attachment updateAttachment(Long id, Attachment attachment) {
+        Attachment existAttachment = attachmentRepository.findAttachmentById(id);
+        if(existAttachment != null){
+            existAttachment.setFileUrl(attachment.getFileUrl());
+            existAttachment.setFileType(attachment.getFileType());
+            return attachmentRepository.save(existAttachment);
+        }
         return null;
     }
 
