@@ -7,7 +7,7 @@ import java.util.UUID;
 
 public interface AttachmentService {
     List<Attachment> getAllAttachments();
-    Attachment saveAttachment(Attachment attachment);
+    Attachment saveAttachment(Attachment attachment, Long faultReportId);
     Attachment getAttachmentById(Long id);
     Attachment updateAttachment (Long id, Attachment attachment);
     void deleteById (Long id);

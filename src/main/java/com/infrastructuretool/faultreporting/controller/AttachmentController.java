@@ -19,28 +19,4 @@ public class AttachmentController {
         this.attachmentService = attachmentService;
     }
 
-    @PostMapping("/attachment")
-    public Attachment save(@RequestBody Attachment attachment){
-        return attachmentService.saveAttachment(attachment);
-    }
-
-    @GetMapping("/attachments")
-    public List<Attachment> attachmentList(){
-        return attachmentService.getAllAttachments();
-    }
-
-    @GetMapping("/attachment/{id}")
-    public Attachment getAttachmentById(@PathVariable ("id") Long id){
-        return attachmentService.getAttachmentById(id);
-    }
-
-    @PutMapping("/update/attachment/{id}")
-    public Attachment updateAttachment(@PathVariable ("id") Long id, @RequestBody Attachment attachment){
-        return attachmentService.updateAttachment(id, attachment);
-    }
-
-    @DeleteMapping("/delete/attachment/{id}")
-    public void deleteById(@PathVariable ("id") Long id){
-        attachmentService.deleteById(id);
-    }
 }
