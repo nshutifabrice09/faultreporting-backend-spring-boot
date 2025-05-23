@@ -24,4 +24,8 @@ public class AttachmentController {
         return attachmentService.saveAttachment(attachment, faultReportId);
     }
 
+    @GetMapping("/attachments")
+    public List<Attachment> attachmentList(){
+        return attachmentService.getAllAttachments();
+    }
 }
