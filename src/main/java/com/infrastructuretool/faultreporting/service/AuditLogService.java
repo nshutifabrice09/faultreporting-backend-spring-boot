@@ -7,7 +7,7 @@ import java.util.List;
 public interface AuditLogService {
     List<AuditLog> getAllAuditLogs();
     AuditLog getAuditLogById(Long id);
-    AuditLog saveAuditLog(AuditLog auditLog);
+    AuditLog saveAuditLog(AuditLog auditLog, Long faultReportId);
     AuditLog updateAuditLog(Long id, AuditLog auditLog);
     void deleteById(Long id);
 }
