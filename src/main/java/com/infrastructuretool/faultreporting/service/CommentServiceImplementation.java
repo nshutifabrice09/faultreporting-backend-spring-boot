@@ -49,11 +49,17 @@ public class CommentServiceImplementation implements CommentService{
 
     @Override
     public Comment updateComment(Long id, Comment comment) {
+        Comment existComment = commentRepository.findCommentById(id);
+        if(existComment != null){
+            existComment.setMessage(comment.getMessage());
+            existComment.setTimestamp(comment.getTimestamp());
+            return commentRepository.save(existComment);
+        }
         return null;
     }
 
     @Override
     public void deleteById(Long id) {
-
+        commentRepository.deleteById(id);
     }
 }
