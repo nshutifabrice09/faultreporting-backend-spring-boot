@@ -33,7 +33,9 @@ public class AuditLogServiceImplementation implements AuditLogService{
 
     @Override
     public AuditLog saveAuditLog(AuditLog auditLog, Long faultReportId) {
-        FaultReport faultReport = fa
+        FaultReport faultReport = faultReportRepository.findFaultReportById(faultReportId);
+        auditLog.setFaultReport(faultReport);
+        return auditLogRepository.save(auditLog);
     }
 
 
