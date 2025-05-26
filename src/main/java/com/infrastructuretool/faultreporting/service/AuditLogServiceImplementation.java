@@ -16,11 +16,7 @@ public class AuditLogServiceImplementation implements AuditLogService{
     public AuditLog getAuditLogById(Long id) {
         return null;
     }
-
-    @Override
-    public AuditLog saveAuditLog(AuditLog auditLog) {
-        return null;
-    }
+    
 
     @Override
     public AuditLog updateAuditLog(Long id, AuditLog auditLog) {
