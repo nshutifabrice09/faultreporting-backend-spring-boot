@@ -1,6 +1,7 @@
 package com.infrastructuretool.faultreporting.service;
 
 import com.infrastructuretool.faultreporting.model.Comment;
+import com.infrastructuretool.faultreporting.model.User;
 import com.infrastructuretool.faultreporting.repository.CommentRepository;
 import com.infrastructuretool.faultreporting.repository.FaultReportRepository;
 import com.infrastructuretool.faultreporting.repository.UserRepository;
@@ -33,7 +34,7 @@ public class CommentServiceImplementation implements CommentService{
 
     @Override
     public Comment saveComment(Comment comment, Long authorId, Long faultReportId) {
-        return null;
+        User user = userRepository.getAuthorById(authorId);
     }
 
     @Override
