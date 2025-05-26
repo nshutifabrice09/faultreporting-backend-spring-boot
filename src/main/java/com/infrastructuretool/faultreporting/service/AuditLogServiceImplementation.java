@@ -41,11 +41,18 @@ public class AuditLogServiceImplementation implements AuditLogService{
 
     @Override
     public AuditLog updateAuditLog(Long id, AuditLog auditLog) {
+        AuditLog existAuditLog = auditLogRepository.findAuditLogById(id);
+        if(existAuditLog != null){
+            existAuditLog.setAction(auditLog.getAction());
+            existAuditLog.setPerformedBy(auditLog.getPerformedBy());
+            existAuditLog.setTimestamp(auditLog.getTimestamp());
+            return auditLogRepository.save(existAuditLog);
+        }
         return null;
     }
 
     @Override
     public void deleteById(Long id) {
-
+        auditLogRepository.deleteById(id);
     }
 }
