@@ -1,7 +1,9 @@
 package com.infrastructuretool.faultreporting.service;
 
 import com.infrastructuretool.faultreporting.model.AuditLog;
+import com.infrastructuretool.faultreporting.model.FaultReport;
 import com.infrastructuretool.faultreporting.repository.AuditLogRepository;
+import com.infrastructuretool.faultreporting.repository.FaultReportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,10 +13,12 @@ import java.util.List;
 public class AuditLogServiceImplementation implements AuditLogService{
 
     private final AuditLogRepository auditLogRepository;
+    private final FaultReportRepository faultReportRepository;
 
     @Autowired
-    public AuditLogServiceImplementation(AuditLogRepository auditLogRepository) {
+    public AuditLogServiceImplementation(AuditLogRepository auditLogRepository, FaultReportRepository faultReportRepository) {
         this.auditLogRepository = auditLogRepository;
+        this.faultReportRepository = faultReportRepository;
     }
 
     @Override
@@ -29,7 +33,7 @@ public class AuditLogServiceImplementation implements AuditLogService{
 
     @Override
     public AuditLog saveAuditLog(AuditLog auditLog, Long faultReportId) {
-        return null;
+        FaultReport faultReport = fa
     }
 
 
