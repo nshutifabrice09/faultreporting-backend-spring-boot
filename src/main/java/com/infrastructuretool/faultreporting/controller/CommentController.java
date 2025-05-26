@@ -19,5 +19,10 @@ public class CommentController {
     }
 
     @PostMapping("/comment/{authorId}/{faultReportId}")
+    public Comment saveComment(@RequestBody Comment comment,
+                               @PathVariable ("authorId") Long authorId,
+                               @PathVariable ("faultReportId") Long faultReportId){
+        return commentService.saveComment(comment, authorId, faultReportId);
+    }
 
 }
