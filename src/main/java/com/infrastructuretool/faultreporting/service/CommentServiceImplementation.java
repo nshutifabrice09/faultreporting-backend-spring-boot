@@ -41,12 +41,6 @@ public class CommentServiceImplementation implements CommentService{
         comment.setFaultReport(faultReport);
         return commentRepository.save(comment);
     }
-
-    @Override
-    public Comment saveComment(Comment comment) {
-        return null;
-    }
-
     @Override
     public Comment updateComment(Long id, Comment comment) {
         Comment existComment = commentRepository.findCommentById(id);

@@ -18,4 +18,6 @@ public class CommentController {
         this.commentService = commentService;
     }
 
+    @PostMapping("/comment/{authorId}/{faultReportId}")
+
 }

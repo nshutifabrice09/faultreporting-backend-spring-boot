@@ -8,9 +8,7 @@ public interface CommentService {
     List<Comment> getAllComments();
     Comment getCommentById (Long id);
     Comment saveComment(Comment comment, Long authorId, Long faultReportId);
-
-    Comment saveComment(Comment comment);
-
+    
     Comment updateComment (Long id, Comment comment);
     void deleteById(Long id);
 }
