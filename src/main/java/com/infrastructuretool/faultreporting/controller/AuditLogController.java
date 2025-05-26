@@ -18,6 +18,10 @@ public class AuditLogController {
         this.auditLogService = auditLogService;
     }
 
+    @PostMapping("/auditLog/{faultReportId}")
+    public AuditLog save(@RequestBody AuditLog auditLog, @PathVariable ("faultReportId") Long faultReportId){
+        return auditLogService.saveAuditLog(auditLog, faultReportId);
+    }
 
 
 }
