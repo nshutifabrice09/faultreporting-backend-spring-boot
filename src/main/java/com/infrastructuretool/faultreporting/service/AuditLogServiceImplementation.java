@@ -19,12 +19,12 @@ public class AuditLogServiceImplementation implements AuditLogService{
 
     @Override
     public List<AuditLog> getAllAuditLogs() {
-        return null;
+        return auditLogRepository.findAll();
     }
 
     @Override
     public AuditLog getAuditLogById(Long id) {
-        return null;
+        return auditLogRepository.findAuditLogById(id);
     }
 
     @Override
