@@ -18,6 +18,11 @@ public class CommentServiceImplementation implements CommentService{
     }
 
     @Override
+    public Comment saveComment(Comment comment, Long authorId, Long faultReportId) {
+        return null;
+    }
+
+    @Override
     public Comment saveComment(Comment comment) {
         return null;
     }

@@ -31,4 +31,14 @@ public class AuditLogController {
     public AuditLog getAuditLog (@PathVariable ("id") Long id){
         return auditLogService.getAuditLogById(id);
     }
+
+    @PutMapping("/update/auditLog/{id}")
+    public AuditLog updateAuditLog(@PathVariable ("id") Long id, @RequestBody AuditLog auditLog){
+        return auditLogService.updateAuditLog(id, auditLog);
+    }
+
+    @DeleteMapping("/delete/auditLog/{id}")
+    public void removeAuditLog(@PathVariable ("id") Long id){
+        auditLogService.deleteById(id);
+    }
 }
