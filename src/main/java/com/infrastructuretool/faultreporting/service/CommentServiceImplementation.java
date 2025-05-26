@@ -37,7 +37,9 @@ public class CommentServiceImplementation implements CommentService{
     public Comment saveComment(Comment comment, Long authorId, Long faultReportId) {
         User user = userRepository.findAuthorById(authorId);
         FaultReport faultReport = faultReportRepository.findFaultReportById(faultReportId);
-        
+        comment.setAuthor(user);
+        comment.setFaultReport(faultReport);
+        return commentRepository.save(comment);
     }
 
     @Override
