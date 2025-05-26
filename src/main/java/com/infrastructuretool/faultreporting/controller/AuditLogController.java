@@ -23,5 +23,12 @@ public class AuditLogController {
         return auditLogService.saveAuditLog(auditLog, faultReportId);
     }
 
-
+    @GetMapping("/auditLogs")
+    public List<AuditLog> auditLogList(){
+        return auditLogService.getAllAuditLogs();
+    }
+    @GetMapping("/auditLog/{id}")
+    public AuditLog getAuditLog (@PathVariable ("id") Long id){
+        return auditLogService.getAuditLogById(id);
+    }
 }
